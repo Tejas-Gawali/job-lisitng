@@ -27,7 +27,15 @@ function renderJobCards() {
       <p>Location: ${job.location.display_name}</p>
     `;
     jobListingsContainer.appendChild(jobCard);
-    jobCard.addEventListener('click', () => showJobDetails(job.id));
+    jobCard.addEventListener('click', () => {
+      // Remove 'selected' class from all job cards
+      document.querySelectorAll('.job-card').forEach(card => {
+        card.classList.remove('selected');
+      });
+      // Add 'selected' class to the clicked job card
+      jobCard.classList.add('selected');
+      showJobDetails(job.id);
+    });
   });
 
   // Add event listener to details buttons
@@ -51,8 +59,11 @@ function showJobDetails(jobId) {
         <h3>${job.title}</h3>
         <p>Company: ${job.company.display_name}</p>
         <p>Location: ${job.location.display_name}</p>
+        <p>Contract Time: ${job.contract_time}</p>
+        <p>Type: ${job.contract_type}</p>
         <p>Salary: £${job.salary_min} - £${job.salary_max}</p>
         <p>Description: ${job.description}</p>
+        <a href="${job.redirect_url}" target="_blank">Apply Now</a>
       </div>
     `;
     jobPanel.classList.add('active');
