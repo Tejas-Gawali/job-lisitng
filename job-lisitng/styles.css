@@ -1,0 +1,82 @@
+/* Navbar styles remain the same */
+.navbar {
+  background-color: #333;
+  color: #fff;
+  padding: 10px 0;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 1000; /* Ensure the navbar is above other content */
+}
+
+.navbar .container {
+  max-width: 1200px;
+  width: 100%;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.navbar h1 {
+  margin: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding-top: 50px;
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.container {
+  display: flex;
+  max-width: 1200px;
+  width: 100%;
+  padding: 20px;
+  margin: auto;
+  position: relative; /* Ensure relative positioning for child elements */
+  padding-top: 50px; /* Adjust padding top to account for navbar height */
+}
+
+
+.job-listings {
+  width: 70%; /* Adjust width as needed */
+  display: flex;
+  flex-wrap: wrap; /* Allow job cards to wrap */
+  overflow-y: auto; /* Add vertical scrollbar when necessary */
+}
+
+.job-card {
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  margin: 10px;
+  margin-left: 50px;
+  padding: 20px;
+  cursor: pointer;
+  transition: transform 0.3s ease;
+  width: calc(50% - 20px); /* Adjust width as needed */
+}
+
+.job-card:hover {
+  transform: translateY(-5px);
+}
+
+.job-panel {
+  position: sticky;
+  top: 85px; /* Adjust top position as needed */
+  right: 15%; /* Adjust right position to be slightly right of center */
+  background-color: #f9f9f9;
+  border: 1px solid #ddd; /* Add border */
+  width: 30%; /* Adjust width as needed */
+  max-height: 500px;
+  padding: 20px;
+  display: none; /* Hide job panel by default */
+  z-index: 999; /* Ensure job panel appears below navbar */
+  transition: right 0.5s ease;
+}
+
+.job-panel.active {
+  display: block; /* Show job panel when active */
+}
