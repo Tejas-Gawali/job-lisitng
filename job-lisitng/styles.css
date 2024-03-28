@@ -63,20 +63,24 @@ body {
   transform: translateY(-5px);
 }
 
+.job-card.selected {
+  background-color: #ffffcc; /* Adjust the background color for the highlight effect */
+}
+
 .job-panel {
   position: sticky;
   top: 85px; /* Adjust top position as needed */
   right: 15%; /* Adjust right position to be slightly right of center */
   background-color: #f9f9f9;
   border: 1px solid #ddd; /* Add border */
-  width: 30%; /* Adjust width as needed */
+  width: 50%; /* Adjust width as needed */
   max-height: 500px;
   padding: 20px;
   display: none; /* Hide job panel by default */
   z-index: 999; /* Ensure job panel appears below navbar */
-  transition: right 0.5s ease;
+  
 }
 
 .job-panel.active {
-  display: block; /* Show job panel when active */
+  display: block;
 }
